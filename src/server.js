@@ -1,6 +1,7 @@
 import express from 'express'
 import http from 'http'
-import routes from './routes/index'
+import routes from '@/routes/index'
+
 const app = express()
 const port = process.env.PORT || 3030
 app.use('/node', routes)
