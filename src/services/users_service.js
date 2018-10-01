@@ -1,4 +1,4 @@
-import redis from '../databases/redis'
+import redis from '@/databases/redis'
 
 export default {
     async getID(id) {
