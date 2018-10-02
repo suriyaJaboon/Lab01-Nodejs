@@ -1,9 +1,10 @@
 import express from 'express'
-import users from '@/services/users_service'
+import authen_service from '@/services/authen_service'
 const users_route = express.Router()
 
-users_route.get('/:id', (req, res) => {
-    return res.json({'users': 'a'})
+users_route.get('/:id', async (req, res) => {
+    let id = await authen_service.login(req.params.id)
+    return res.json({'users': id})
 })
 
 export default users_route
