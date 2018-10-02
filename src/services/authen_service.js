@@ -5,6 +5,7 @@ import uuidv4 from 'uuid/v4'
 
 export default {
     login(payload) {
+        let expiresToken = environment.expiresMode()
         if(payload.username === 'tom' && payload.password === '12345') {
             const uuid = uuidv4()
             const uuid_user = {id: 1, uuid: uuid}
@@ -12,9 +13,9 @@ export default {
                 issuser: 'techcatch', 
                 subject: 'techcatch@techcatch.com', 
                 audience: 'http://techcatch.com', 
-                expiresIn: environment.setMode().config.expiresToken
+                expiresIn: expiresToken.key
             })
-        redis.set(uuid, token, 'EX', 120)
+        redis.set(uuid, token, 'EX', expiresToken.value)
         return token
         } else {
             return ''

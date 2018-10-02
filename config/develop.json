@@ -1,0 +1,20 @@
+{
+    "private_Key": "keys1024/private_key",
+    "public_Key": "keys1024/public_key.pub",
+    "redis": {
+        "host": "localhost",
+        "port": 6379,
+        "database": 0
+    },
+    "mongo": {
+        "host": "localhost",
+        "port": "27017",
+        "database": "node"
+    },
+    "expiresToken": [
+        { "is": true, "key": "30m", "value": 1800000 },
+        { "is": false, "key": "1h", "value": 3600000 },
+        { "is": false, "key": "2h", "value": 7200000 },
+        { "is": false, "key": "1d", "value": 86400000 }
+    ]
+}

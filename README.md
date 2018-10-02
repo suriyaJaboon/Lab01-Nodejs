@@ -21,3 +21,8 @@
     * scp lab01-nodejs.tar.gz ${user}@{ipaddress}:/opt
     * tar xvf lab01-nodejs.tar.gz
     * $ ln -s /opt/lab01-nodejs/setup/lab01-nodejs /etc/init.d/lab01-nodejs
+
+* ### **Generate Key**
+    * ```` 
+        $ openssl genrsa -out private_key bit #default 1024 {2048 or 4096} 
+        $ openssl rsa -in private_key -pubout > public_key.pub

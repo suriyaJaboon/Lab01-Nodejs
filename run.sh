@@ -11,6 +11,8 @@ cp -r ./bin lab01-nodejs
 cp -r ./setup lab01-nodejs
 cp -r ./node_modules lab01-nodejs
 cp -r ./node-v8.12.0 lab01-nodejs
+cp -r ./config lab01-nodejs
+cp -r ./keys lab01-nodejs
 echo 'COPY FINISH'
 
 tar cvf ./lab01-nodejs.tar.gz ./lab01-nodejs

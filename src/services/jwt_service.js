@@ -10,11 +10,11 @@ export default {
             expiresIn: sign.expiresIn,
             algorithm: 'RS512'
         }
-        return jwt.sign(payload, environment.setMode().private_Key, signOptions)
+        return jwt.sign(payload, environment.getMode().private_Key, signOptions)
     },
     
     verifyToken(token) {
-        return jwt.verify(token, environment.setMode().public_Key, (err, result) => {
+        return jwt.verify(token, environment.getMode().public_Key, (err, result) => {
             if(err) {
                 return err
             } else {
@@ -24,7 +24,7 @@ export default {
     },
 
     isVerifyToken(token) {
-        return jwt.verify(token, environment.setMode().public_key, (err, result) => {
+        return jwt.verify(token, environment.getMode().public_key, (err, result) => {
             if(err) {
                 return false
             } else {
